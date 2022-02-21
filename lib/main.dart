@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_basic_ui/styles.dart_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,48 +13,48 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Basic Ui",
-      home: FirstScreen(),
-    );
-  }
-}
-
-class FirstScreen extends StatelessWidget {
-  const FirstScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text(""
-              "Ui Basic"),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Center(child: Text("Basic ui")),
+        ),
+        body: Column(
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                child: Text(
+                  "Container 1",
+                  style: ThemeStyle.containerText,
+                ),
+                color: Colors.blue,
+                padding: EdgeInsets.all(40.0),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                child: Text("Container 2",
+                style: ThemeStyle.containerText,),
+                color: Colors.red,
+                padding: EdgeInsets.all(30.0),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                child: Text("Container 3"),
+                color: Colors.amberAccent,
+                padding: EdgeInsets.all(30.0),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                child: Text("Container 4 extended"),
+                color: Colors.brown,
+                padding: EdgeInsets.all(30.0),
+              ),
+            ),
+          ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
-        backgroundColor: Colors.blue,
-      ),
-      body: Center(
-        child: Text("Click on the bellow Button"),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
-          ),
-        ],
-       
-    )
     );
   }
 }
