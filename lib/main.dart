@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
                       child: Column(
                         children: <Widget>[
                           Expanded(
-                            flex: 8,
+                            flex: 5,
                             child: Container(
                               alignment: Alignment.center,
                               child: Text(
@@ -64,12 +64,16 @@ class MyApp extends StatelessWidget {
                             ),
                           ),
                           Expanded(
-                            flex: 2,
+                            flex: 5,
                             child: Container(
                               alignment: Alignment.center,
                               child: Text(
                                 "Container 2 extend 2/3",
-                                style: ThemeStyle.containerText,
+                                style: TextStyle(
+                                  color: Colors.amber,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.normal,
+                                ),
                               ),
                               color: Color.fromARGB(255, 122, 25, 161),
                               padding: EdgeInsets.all(30.0),
