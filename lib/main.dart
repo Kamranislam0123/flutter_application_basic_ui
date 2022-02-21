@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: <Widget>[
             Expanded(
+              flex: 4,
               child: Container(
                 alignment: Alignment.center,
                 child: Text(
@@ -30,25 +31,62 @@ class MyApp extends StatelessWidget {
                 padding: EdgeInsets.all(40.0),
               ),
             ),
+            //40% of screen
             Expanded(
-              child: Container(
-                child: Text("Container 2",
-                style: ThemeStyle.containerText,),
-                color: Colors.red,
-                padding: EdgeInsets.all(30.0),
-              ),
-            ),
+                flex: 4,
+                child: Row(children: <Widget>[
+                  Expanded(
+                    flex: 5,
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Container 2 extend 1",
+                        style: ThemeStyle.containerText,
+                      ),
+                      color: Colors.red,
+                      padding: EdgeInsets.all(30.0),
+                    ),
+                  ),
+                  Expanded(
+                      flex: 5,
+                      child: Column(
+                        children: <Widget>[
+                          Expanded(
+                            flex: 8,
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Container 2 extend 2/2",
+                                style: ThemeStyle.containerText,
+                              ),
+                              color: Color.fromARGB(255, 25, 161, 131),
+                              padding: EdgeInsets.all(30.0),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Container 2 extend 2/3",
+                                style: ThemeStyle.containerText,
+                              ),
+                              color: Color.fromARGB(255, 122, 25, 161),
+                              padding: EdgeInsets.all(30.0),
+                            ),
+                          ),
+                        ],
+                      )),
+                ])),
             Expanded(
+              flex: 2,
               child: Container(
-                child: Text("Container 3"),
+                alignment: Alignment.center,
+                child: Text(
+                  "Container 3",
+                  style: ThemeStyle.containerText,
+                ),
                 color: Colors.amberAccent,
-                padding: EdgeInsets.all(30.0),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                child: Text("Container 4 extended"),
-                color: Colors.brown,
                 padding: EdgeInsets.all(30.0),
               ),
             ),
