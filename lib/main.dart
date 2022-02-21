@@ -40,6 +40,11 @@ class FirstScreen extends StatelessWidget {
         child: Icon(Icons.add),
         backgroundColor: Colors.blue,
       ),
+
+      body: Center(
+        child: Text(
+          "Click on the bellow Button"),
+      ),
     );
   }
 }
