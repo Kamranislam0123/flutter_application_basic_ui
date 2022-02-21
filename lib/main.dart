@@ -9,7 +9,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Basic Ui",
@@ -24,27 +23,37 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
+      appBar: AppBar(
         title: Center(
           child: Text(""
               "Ui Basic"),
         ),
       ),
-
-
-
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-
-        },
+        onPressed: () {},
         child: Icon(Icons.add),
         backgroundColor: Colors.blue,
       ),
-
       body: Center(
-        child: Text(
-          "Click on the bellow Button"),
+        child: Text("Click on the bellow Button"),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Business',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'School',
+          ),
+        ],
+       
+    )
     );
   }
 }
