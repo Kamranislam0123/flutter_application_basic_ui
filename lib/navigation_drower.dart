@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_basic_ui/first_Screen.dart';
 
+import 'home.dart';
 import 'second_screen.dart';
 
 Widget NavigationMenu(BuildContext context) {
@@ -28,6 +29,21 @@ Widget NavigationMenu(BuildContext context) {
               builder: (context)
                {
               return SecondScreen();
+            },
+            ),
+            );
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.abc_rounded),
+          title: Text("Home Screen"),
+          onTap: () {
+            //print("Second screen");
+            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context)
+               {
+              return home();
             },
             ),
             );
