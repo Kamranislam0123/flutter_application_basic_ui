@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_basic_ui/home.dart';
+import 'package:flutter_application_basic_ui/secondinput.dart';
 import 'package:flutter_application_basic_ui/styles.dart_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,8 +20,75 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: home(),
+      home: TextFieldExample(),
     );
+  }
+}
+
+class TextFieldExample extends StatefulWidget {
+  TextFieldExample({Key? key}) : super(key: key);
+
+  @override
+  State<TextFieldExample> createState() => _TextFieldExampleState();
+}
+
+class _TextFieldExampleState extends State<TextFieldExample> {
+  final _controllerfirstname = TextEditingController();
+  final _controllerlastname = TextEditingController();
+  String? firstName;
+  String? lastname;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Text Field Wxample"),
+      ),
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.all(10.0),
+              child: TextField(
+                controller: _controllerfirstname,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10.0),
+              child: TextField(
+                controller: _controllerlastname,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(10.0),
+              child: RaisedButton(
+                color: Colors.blueAccent,
+                textColor: Colors.white,
+                child: Text("Submit Now"),
+                onPressed: () {
+                  passtosecondscreen(context);
+                },
+              ),
+            ),
+            Text(
+              "FirstName:$firstName",
+              style: GoogleFonts.aclonica(
+                textStyle: TextStyle(color: Colors.blue, letterSpacing: 1.0),
+              ),
+            ),
+            Text(
+              "LastName:$lastname",
+              style: GoogleFonts.aclonica(
+                textStyle: TextStyle(color: Colors.blue, letterSpacing: .5),
+              ),
+            ),
+          ]),
+    );
+  }
+
+  void passtosecondscreen(BuildContext context) {
+    String sendText = _controllerfirstname.text + " " + _controllerlastname.text;
+    Navigator.push(context, MaterialPageRoute(
+      builder: ((context) => secondinput(name: sendText))));
   }
 }
 
